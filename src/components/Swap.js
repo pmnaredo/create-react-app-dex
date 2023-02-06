@@ -88,9 +88,12 @@ function Swap(props) {
   }
 
   async function fetchPrices(one, two) {
-    const res = await axios.get(`http://${process.env.API_HOST}/tokenPrice`, {
-      params: { addressOne: one, addressTwo: two },
-    });
+    const res = await axios.get(
+      `http://${process.env.REACT_APP_API_HOST}/tokenPrice`,
+      {
+        params: { addressOne: one, addressTwo: two },
+      }
+    );
 
     // console.log(res.data);
     setPrices(res.data);
